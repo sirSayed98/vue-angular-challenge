@@ -60,7 +60,14 @@
   border-radius: 4px;
 }
 
-
 .highlighted {
   background-color: yellow; 
+}
+
+.d-flex {
+  display: flex;
+}
+.center {
+  justify-content:center;
+  align-items:center;
 }

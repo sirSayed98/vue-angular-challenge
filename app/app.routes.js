@@ -21,5 +21,12 @@ angular
   .config(($stateProvider) => {
     $stateProvider
       .state(homePage)
-      .state(performancePage);
+      .state(performancePage)
+      .state('404server', {
+        template: '<v-not-found></v-not-found>',
+      })
+      .state('404client', {
+        url: '*path',
+        template: '<v-not-found></v-not-found>',
+      });
   });
