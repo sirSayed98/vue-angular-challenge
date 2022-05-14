@@ -1,6 +1,6 @@
 <template>
   <div class="c-dashboard">
-    <div class="c-filters__container center">
+    <div class="c-filters__container center d-flex">
 
       <div class="date__container">
         <label for="start_date">Start Date:</label>

@@ -21,12 +21,6 @@
     display: flex;
     justify-content: center;
   }
-
-  &__footer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
 }
 
 .c-filters__container {
@@ -34,9 +28,6 @@
   padding: 16px 8px;
   border: 1px solid #dcdee3;
   background-color: #e5e9f1;
-  display:flex;
-  justify-content:center;
-  align-items:center;
 }
 
 .date__container {

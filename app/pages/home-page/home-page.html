@@ -1,11 +1,11 @@
 <div class="c-dashboard">
-  <div  class="c-filters__container">
+  <div  class="c-filters__container center d-flex">
     <v-filter v-on-search="homePageVm.highlightSearch"></v-filter>
   </div>
 
   <employees-list keyword="homePageVm.keyword" employees-list="homePageVm.employees"></employees-list>
 
-  <div class="c-dashboard__footer">
+  <div class="c-dashboard__footer d-flex center">
     <button class="c-button">
       Load More
     </button>
