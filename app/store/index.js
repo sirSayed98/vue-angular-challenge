@@ -1,9 +1,10 @@
-/* eslint-disable array-callback-return */
 /* eslint-disable camelcase */
 import Vuex from 'vuex';
 import Vue from 'vue';
 import axios from 'axios';
-import moment from 'moment';
+
+import { filter } from '../utils/filter.js';
+
 // Load Vuex
 Vue.use(Vuex);
 
@@ -28,17 +29,14 @@ export default new Vuex.Store({
     setChartDisplayed(state, data) {
       const { start_date, end_date } = data;
 
-      let filtered = state.chartDataStore.filter(date => {
-        let current = moment(date.date_ms).format('YYYY-MM-DD');
-        if (moment(current).isBetween(start_date, end_date)) { return date; }
-      });
+      let filtered = filter(state.chartDataStore, start_date, end_date);
 
       state.chartDataDisplayed = filtered;
     },
   },
   actions: {
     getCharts({ commit }) {
-      axios.get('https://fe-task.getsandbox.com/performance').then(res => {
+      axios.get('https://fe-task.getsandbox.com/performance').then((res) => {
         commit('setCharts', res.data);
       });
     },
@@ -47,5 +45,4 @@ export default new Vuex.Store({
       commit('setChartDisplayed', data);
     },
   },
-
 });
