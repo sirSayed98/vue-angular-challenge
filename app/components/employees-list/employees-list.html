@@ -1,0 +1,25 @@
+<div class="c-users-list">
+  <div class="c-users-list__header">
+    <div> Employee </div>
+    <div> Email </div>
+    <div> Adress </div>
+    <div> Start Date </div>
+    <div> Performance Index </div>
+    <div> About </div>
+  </div>
+  <div
+    class="c-users-list__body"
+    ng-repeat="employee in EmployeesListComponentVm.employeesList track by $index">
+    <div>
+      <div class="c-users-list__main-info">
+        <img class="c-users-list__avatar" ng-src="{{employee.profile.avatar}}" ng-attr-alt="{{employee.profile.name}}">
+        <div>{{ employee.profile.name }}</div>
+      </div>
+    </div>
+    <div> {{ employee.email }} </div>
+    <div> {{ employee.profile.address }} </div>
+    <div> {{ employee.start_date | date }} </div>
+    <div> {{ employee.performance_index }} </div>
+    <div> {{ employee.profile.about }} </div>
+  </div>
+</div>

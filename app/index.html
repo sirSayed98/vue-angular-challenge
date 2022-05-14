@@ -1,0 +1,22 @@
+<!doctype html>
+<html ng-app="appModule">
+  <head>
+    <meta charset="utf-8">
+    <title>vue-angular-challenge</title>
+    <meta name="fragment" content="!">
+    <meta name="viewport" content="width=1280">
+    <base href="/" />
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="stylesheet" href="./styles/main.scss">
+  </head>
+  <body>
+    <!--[if lt IE 10]><p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/" upgrade your browser to improve your experience.</p>-->
+    <div class="top-links">
+      <a ui-sref="app" ui-sref-active="active">Home</a>
+      <a ui-sref="team-performance" ui-sref-active="active">Team performance chart page</a>
+    </div>
+
+    <ui-view></ui-view>
+  </body>
+</html>
