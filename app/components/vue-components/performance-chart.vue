@@ -59,12 +59,45 @@ export default {
           text: "Team Performance Index",
           left: "center",
         },
+        visualMap: {
+          top: 50,
+          right: 10,
+          pieces: [
+            {
+              gt: 0,
+              lte: 50,
+              color: "red"
+            },
+            {
+              gt: 50,
+              lte: 80,
+              color: "yellow"
+            },
+            {
+              gt: 80,
+              lte: 100,
+              color: "green"
+            },
+
+          ],
+          outOfRange: {
+            color: "#999"
+          }
+        },
+
         tooltip: {
+          enabled: true,
           trigger: 'axis',
           transitionDuration: 0,
           confine: false,
           hideDelay: 0,
-          padding: 0,
+          padding: 10,
+          backgroundColor: "#16253F",
+          textStyle: {
+            color: "white",
+          },
+          extraCssText: "text-align: center",
+
         },
         grid: {
           left: "30px",
@@ -95,6 +128,7 @@ export default {
         series: [
           {
             data: this.yAxisData,
+            name: "Team Performance Index :",
             type: "line",
             symbol: "circle",
             symbolSize: 2,
