@@ -49,6 +49,9 @@
   min-width: 100px;
   padding: 0 16px;
   border-radius: 4px;
+  &:disabled {
+		background-color: #c7d8e2;
+	}
 }
 
 .highlighted {

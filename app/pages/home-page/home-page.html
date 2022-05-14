@@ -1,12 +1,17 @@
 <div class="c-dashboard">
-  <div  class="c-filters__container center d-flex">
+  <div class="c-filters__container d-flex center">
     <v-filter v-on-search="homePageVm.highlightSearch"></v-filter>
   </div>
 
   <employees-list keyword="homePageVm.keyword" employees-list="homePageVm.employees"></employees-list>
 
   <div class="c-dashboard__footer d-flex center">
-    <button class="c-button">
+    <button 
+      class="c-button"
+      ng-disabled="homePageVm.loading"
+      ng-if="homePageVm.hasMore"
+      ng-click="homePageVm.loadMoreEmployees()">
+      <i ng-if="homePageVm.loading" class="fa fa-spinner fa-spin"></i>
       Load More
     </button>
   </div>
