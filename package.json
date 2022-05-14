@@ -7,6 +7,7 @@
     "angular": "^1.8.2",
     "axios": "^0.27.2",
     "babel-jest": "^28.1.0",
+    "cypress": "^9.6.1",
     "echarts": "^5.2.2",
     "moment": "^2.29.1",
     "ngVue": "^1.7.8",
