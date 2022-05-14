@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import { filter } from '../utils/filter';
 
 test('Date range filter', () => {
