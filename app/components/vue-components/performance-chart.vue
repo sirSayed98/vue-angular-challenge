@@ -1,7 +1,9 @@
 <template>
   <div class="c-chart__container">
     <v-chart ref="chart" :option="chartOptions" />
+
   </div>
+
 </template>
 
 <script>
@@ -9,6 +11,8 @@ import moment from "moment";
 import { use } from "echarts/core";
 import { CanvasRenderer } from "echarts/renderers";
 import { LineChart } from "echarts/charts";
+
+
 import {
   TitleComponent,
   TooltipComponent,
@@ -16,6 +20,7 @@ import {
   VisualMapComponent,
 } from "echarts/components";
 import VChart from "vue-echarts";
+
 
 use([
   CanvasRenderer,
@@ -27,48 +32,20 @@ use([
 ]);
 
 export default {
+
   name: "PerformanceChartComponent",
+
 
   components: {
     VChart,
   },
 
-  data() {
-    return {
-      chartData: [
-        {
-          date_ms: 1641772800000,
-          performance: 0.2,
-        },
-        {
-          date_ms: 1641859200000,
-          performance: 0.33,
-        },
-        {
-          date_ms: 1641945600000,
-          performance: 0.53,
-        },
-        {
-          date_ms: 1642032000000,
-          performance: 0.31,
-        },
-        {
-          date_ms: 1642118400000,
-          performance: 0.65,
-        },
-        {
-          date_ms: 1642204800000,
-          performance: 0.88,
-        },
-        {
-          date_ms: 1642291200000,
-          performance: 0.07,
-        },
-      ],
-    };
-  },
-
   computed: {
+
+    chartData() {
+      return this.$store.state.chartDataDisplayed
+    },
+
     initOptions() {
       return {
         width: "auto",
@@ -135,7 +112,7 @@ export default {
     },
 
     yAxisData() {
-      return this.chartData.map((item) => +item.performance * 100);
+      return this.chartData.map((item) => +`${item.performance * 100}`);
     },
   },
 
