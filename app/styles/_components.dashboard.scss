@@ -36,6 +36,14 @@
   background-color: #e5e9f1;
   display:flex;
   justify-content:center;
+  align-items:center;
+}
+
+.date__container {
+  margin-right:5px;
+  label{
+    font-weight:700;
+  }
 }
 
 .c-chart__container {

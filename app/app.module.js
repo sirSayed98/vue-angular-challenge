@@ -4,6 +4,7 @@ import 'ngVue/build/plugins.js';
 import PerformancePageComponent from './pages/performance-page.vue';
 import PerformanceChartComponent from './components/vue-components/performance-chart.vue';
 import filterComponent from './components/vue-components/filter.vue';
+import store from './store/index';
 
 angular.module('appModule', [
   'ui.router',
@@ -12,7 +13,12 @@ angular.module('appModule', [
 ]);
 
 angular.module('appModule').directive('vPerformancePage', (createVueComponent) => {
-  return createVueComponent(Vue.component('performancePageComponent', PerformancePageComponent));
+  return createVueComponent(Vue.component('performancePageComponent', {
+    store,
+    render(h) {
+      return h(PerformancePageComponent);
+    },
+  }));
 });
 
 angular.module('appModule').directive('vPerformanceChart', (createVueComponent) => {
