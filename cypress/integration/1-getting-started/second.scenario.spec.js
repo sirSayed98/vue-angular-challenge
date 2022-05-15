@@ -2,7 +2,7 @@
 /* eslint-disable no-undef */
 
 describe("second-scenario", () => {
-  it("fetch employees", () => {
+  it("load more button", () => {
     cy.visit("http://localhost:8080/");
 
     cy.request("https://fe-task.getsandbox.com/employees").then((response) => {
