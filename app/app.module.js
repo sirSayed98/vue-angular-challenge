@@ -1,25 +1,26 @@
-import Vue from 'vue';
 import 'ngVue';
 import 'ngVue/build/plugins.js';
-import PerformancePageComponent from './pages/performance-page.vue';
-import NotFound from './pages/404-page.vue';
-import PerformanceChartComponent from './components/vue-components/performance-chart.vue';
+import Vue from 'vue';
 import filterComponent from './components/vue-components/filter.vue';
+import PerformanceChartComponent from './components/vue-components/performance-chart.vue';
+import NotFound from './pages/404-page.vue';
+import PerformancePageComponent from './pages/performance-page.vue';
 import store from './store/index';
 
-angular.module('appModule', [
+const app = angular.module('appModule', [
   'ui.router',
   'ngVue',
   'ngVue.plugins',
 ]);
 
-angular.module('appModule').directive('vPerformancePage', (createVueComponent) => {
-  return createVueComponent(Vue.component('performancePageComponent', {
+app.config(($ngVueProvider) => {
+  $ngVueProvider.setRootVueInstanceProps({
     store,
-    render(h) {
-      return h(PerformancePageComponent);
-    },
-  }));
+  });
+});
+
+angular.module('appModule').directive('vPerformancePage', (createVueComponent) => {
+  return createVueComponent(Vue.component('performancePageComponent', PerformancePageComponent));
 });
 
 angular.module('appModule').directive('vPerformanceChart', (createVueComponent) => {
