@@ -31,4 +31,8 @@ function homePageController(Employees) {
       homePageVm.loading = false;
     });
   };
+
+  homePageVm.callYourDad = () => {
+    alert('Hello my dad');
+  };
 }

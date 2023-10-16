@@ -6,7 +6,7 @@
   <employees-list keyword="homePageVm.keyword" employees-list="homePageVm.employees"></employees-list>
 
   <div class="c-dashboard__footer d-flex center">
-    <button 
+    <button
       class="c-button"
       ng-disabled="homePageVm.loading"
       ng-if="homePageVm.hasMore"
@@ -15,4 +15,13 @@
       Load More
     </button>
   </div>
+
+  <!-- <v-hello-world
+    v-props-first-name="'Hemdan'"
+  /> -->
+
+  <v-hello-world
+    v-on-call-dad="homePageVm.callYourDad"
+  />
+
 </div>
